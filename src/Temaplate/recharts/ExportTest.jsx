@@ -1,12 +1,4 @@
-import {
-  colors,
-  Grid,
-  Paper,
-  Box,
-  Typography,
-  Stack,
-  Button,
-} from "@mui/material";
+import { Grid, Paper, Box, Typography, Stack, Button } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -15,17 +7,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
-import PersonIcon from "@mui/icons-material/Person";
+
 import { blue } from "@mui/material/colors";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import {
   CartesianGrid,
-  LineChart,
   XAxis,
   YAxis,
-  Legend,
   Tooltip,
-  Line,
   Label,
   AreaChart,
   Area,
@@ -34,14 +23,12 @@ import {
 import { useState } from "react";
 import { jsPDF } from "jspdf";
 import * as htmlToImage from "html-to-image";
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 import download from "downloadjs";
 import domtoimage from "dom-to-image";
-import fileDownload from "js-file-download";
 
 const ExportTest = () => {
   const [open, setOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(["PDF", "PNG", "JPG"]);
+  const [selectedValue] = useState(["PDF", "PNG", "JPG"]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -55,23 +42,21 @@ const ExportTest = () => {
       htmlToImage
         .toJpeg(document.getElementById("testChart1"))
         .then(function (dataUrl) {
-          // doc.addImage(dataUrl, "JPG", 2, 50);
-          // doc.save("Test.pdf");
-          fileDownload(
-            "https://th.bing.com/th/id/OIP.avb9nDfw3kq7NOoP0grM4wHaEK?pid=ImgDet&rs=1",
-            "test.png"
-          );
+          doc.addImage(dataUrl, "JPG", 2, 50);
+          doc.save("Test.pdf");
         });
     }
     if (value === "PNG") {
-      domtoimage.toJpeg(document.getElementById("testChart1")).then((res)=>download(res));
+      domtoimage
+        .toPng(document.getElementById("testChart1"))
+        .then((res) => download(res));
       // download("s", "test.xlsx");
     }
     if (value === "JPG") {
       htmlToImage
-        .toPng(document.getElementById("testChart1"))
+        .toJpeg(document.getElementById("testChart1"))
         .then(function (dataUrl) {
-          download(dataUrl, "test.png");
+          download(dataUrl, "test.jpg");
         });
     }
   };

@@ -1,4 +1,4 @@
-import { colors, Grid, Paper, Box, Typography, Stack } from "@mui/material";
+import { colors, Grid, Paper, Box, Typography} from "@mui/material";
 import {
   CartesianGrid,
   LineChart,
@@ -94,11 +94,11 @@ const LineChartMultiTest = () => {
                 fill="url(#colorEngage)"
               />
             </AreaChart>
-            <Box display='flex' gap={2} justifyContent='center'>
-              <Typography display='inline' color="#8884d8" textAlign="center">
+            <Box display="flex" gap={2} justifyContent="center">
+              <Typography display="inline" color="#8884d8" textAlign="center">
                 Vivel
               </Typography>
-              <Typography display='inline' color="#82ca9d" textAlign="center">
+              <Typography display="inline" color="#82ca9d" textAlign="center">
                 Engage
               </Typography>
             </Box>
