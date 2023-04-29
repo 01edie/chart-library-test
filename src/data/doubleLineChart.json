@@ -1,0 +1,39 @@
+{
+  "doubleLineChartData": [
+    {
+      "month": "Jan",
+      "Vivel": 2400,
+      "Engage": 4000
+    },
+    {
+      "month": "Feb",
+      "Vivel": 1398,
+      "Engage": 3000
+    },
+    {
+      "month": "Mar",
+      "Vivel": 9800,
+      "Engage": 2000
+    },
+    {
+      "month": "Apr",
+      "Vivel": 2780,
+      "Engage": 4000
+    },
+    {
+      "month": "May",
+      "Vivel": 4800,
+      "Engage": 1890
+    },
+    {
+      "month": "Jun",
+      "Vivel": 3800,
+      "Engage": 2390
+    },
+    {
+      "month": "Jul",
+      "Vivel": 4300,
+      "Engage": 3490
+    }
+  ]
+}
